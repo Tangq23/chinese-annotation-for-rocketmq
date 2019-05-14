@@ -25,7 +25,7 @@ public class Consumer {
          * 可以通过下面这句话来设置name server的地址，当然你也可以通过环境变量来进行设置
          * 因为我们在前面已经设置了环境变量，所以这里应该将这句话注释掉
          */
-        consumer.setNamesrvAddr("name-server1-ip:9876;name-server2-ip:9876");
+        consumer.setNamesrvAddr("192.168.35.128:9876");
 
         /*
          * 在指定的消费者组是全新的情况下，指定从哪里开始消费。
@@ -36,7 +36,7 @@ public class Consumer {
         /*
          * 指定要订阅的topic来进行消费
          */
-        consumer.subscribe("TopicTest", "*");
+        consumer.subscribe("Jodie_topic_1023", "*");
 
         /*
          *  注册一个回调函数，这个回调函数会在消息从broker中取过来的时候调用执行

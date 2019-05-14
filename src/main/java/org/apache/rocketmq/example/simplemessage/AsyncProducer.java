@@ -12,9 +12,9 @@ import java.util.concurrent.TimeUnit;
 public class AsyncProducer {
     public static void main(String[] args) throws Exception {
         //实例化DefaultMQProducer，这里如要设置生产者组名。
-        DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
+        DefaultMQProducer producer = new DefaultMQProducer("a_synchronization_producer_group");
         //指明name server的地址
-        producer.setNamesrvAddr("localhost:9876");
+        producer.setNamesrvAddr("192.168.35.128:9876");
         //启动producer实例，只需要启动一次
         producer.start();
         //当异步发送失败，内部执行的最大重发次数，内部执行重发可能导致消息重复，这里设置为0

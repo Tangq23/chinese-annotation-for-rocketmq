@@ -20,7 +20,7 @@ public class Producer {
          * 可以通过下面这句话来设置name server的地址，当然你也可以通过环境变量来进行设置
          * 因为我们在前面已经设置了环境变量，所以这里应该将这句话注释掉
          */
-        producer.setNamesrvAddr("name-server1-ip:9876;name-server2-ip:9876");
+        producer.setNamesrvAddr("192.168.35.128:9876");
         /*
          * 启动实例
          */
