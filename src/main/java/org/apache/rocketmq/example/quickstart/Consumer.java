@@ -19,7 +19,7 @@ public class Consumer {
         /*
          * 实例化DefaultMQPushConsumer，同样这里需要设置消费者组名
          */
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("please_rename_unique_group_name_4");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("consumerGroupName");
 
         /*
          * 可以通过下面这句话来设置name server的地址，当然你也可以通过环境变量来进行设置
@@ -36,7 +36,7 @@ public class Consumer {
         /*
          * 指定要订阅的topic来进行消费
          */
-        consumer.subscribe("Jodie_topic_1023", "*");
+        consumer.subscribe("testTopic", "*");
 
         /*
          *  注册一个回调函数，这个回调函数会在消息从broker中取过来的时候调用执行

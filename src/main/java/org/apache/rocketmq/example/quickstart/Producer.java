@@ -15,7 +15,7 @@ public class Producer {
         /*
          * 实例化DefaultMQProducer，这里如要设置生产者组名。
          */
-        DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
+        DefaultMQProducer producer = new DefaultMQProducer("producerGroupName");
         /*
          * 可以通过下面这句话来设置name server的地址，当然你也可以通过环境变量来进行设置
          * 因为我们在前面已经设置了环境变量，所以这里应该将这句话注释掉
@@ -27,13 +27,13 @@ public class Producer {
         producer.start();
 
         // 发送1000个消息
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             try {
 
                 /*
                  * 创建消息实例，指定topic、tag和消息主体
                  */
-                Message msg = new Message("TopicTest" /* Topic */,
+                Message msg = new Message("testTopic" /* Topic */,
                         "TagA" /* Tag */,
                         ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */
                 );
